@@ -1,0 +1,15 @@
+<form ng-submit='create.addEvent()'>
+  <input type='text' ng-model='create.newEvent.name' required placeholder='Name'>
+  <input type='text' ng-model='create.newEvent.location' required placeholder='Location'>
+  <input type='text' ng-model='create.newEvent.date' required placeholder='Date'>
+  <input type='text' ng-model='create.newEvent.website' required placeholder='Event website'>
+  <select name='select-game' ng-model='create.newEvent.game'>
+    <option value='Dota 2' selected='selected'>Dota 2</option>
+    <option value='Street Fighter V'>Street Fighter V</option>
+    <option value='HearthStone'>HearthStone</option>
+  </select>
+  <button>Create new Event</button>
+</form>
+
+
+<button ng-click='create.login()'>Login</button>

@@ -56,7 +56,7 @@ module.exports = function(grunt) {
                 sourceMap: true
             },
             js: {
-                src: [ 'src/app/blog.module.js', 'src/**/*.js' ],
+                src: [ 'src/app/app.module.js', 'src/**/*.js' ],
                 dest: 'build/js/app.js',
             },
         },
