@@ -5,7 +5,7 @@
       .module('app')
       .controller('CreateEventController', CreateEventController);
 
-    CreateEventController.$inject = ['EventsService'];
+    CreateEventController.$inject = ['EventsService', 'TwitchService'];
     function CreateEventController(EventsService) {
       console.log('in CreateEventController');
 
@@ -13,6 +13,11 @@
       this.singleGameEvents = EventsService.singleGameEvents;
       var that = this;
       this.newEvent = null;
+
+      // TwitchService.getAllCategories();
+      Twitch.api({method: 'streams', params: {game:'Diablo III', limit:3} }, function(error, list) {
+        console.log(list);
+      });
 
       this.addEvent = function addEvent() {
         console.log('in createEvent function');

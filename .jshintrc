@@ -89,6 +89,7 @@
       "$": true,
       "ght": true,
       "angular": true,
-      "Firebase": true
+      "Firebase": true,
+      "Twitch": true
       }        // additional predefined global variables
 }

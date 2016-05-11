@@ -27,6 +27,12 @@
       <script src='https://angular-ui.github.io/ui-router/release/angular-ui-router.js'></script>
       <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
       <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
+      <script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
+      <script>
+        Twitch.init({clientId: 'nda9qwhtllum6kp584qw6m2a3xf81kc'}, function(error, status) {
+          // the sdk is now loaded
+        });
+      </script>
       <script src='js/app.js'></script>
 
     </body>
