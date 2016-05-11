@@ -1,0 +1,18 @@
+
+<iframe
+  ng-src="{{stream.embeddedStream}}"
+  height="480"
+  width="720"
+  frameborder="0"
+  scrolling="no"
+  allowfullscreen="true">
+</iframe>
+
+
+
+
+<ul>
+  <li ng-repeat='stream in streams.singleGameStreamsArray'>
+    <p>{{stream.channel.display_name}}</p>
+  </li>
+</ul>

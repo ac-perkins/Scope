@@ -5,21 +5,29 @@
       .module('app')
       .factory('TwitchService', TwitchService);
 
-      TwitchService.$inject = ['$http'];
-      function TwitchService($http) {
+      TwitchService.$inject = ['$q'];
+      function TwitchService($q) {
+
+        var singleGameStreamsArray = null;
 
         return {
-          getAllCategories: getAllCategories
+          getSingleGameStreams: getSingleGameStreams,
+          getSingleGameStreamsArray: getSingleGameStreamsArray
         };
 
-        function getAllCategories() {
-          return $http({
-            method: 'GET',
-            url: 'https://api.twitch.tv/kraken/streams?game=Diablo+III',
-          }).then(function success(response) {
-            console.log(response);
-            // return response.value.data;
+        function getSingleGameStreams(gameName, maxStreams) {
+          var def = $q.defer();
+          Twitch.api({method: 'streams', params: {game: gameName, limit: maxStreams} }, function(error, list) {
+            console.log('In getSingleGameStreams success', list.streams);
+            singleGameStreamsArray = list.streams;
+            def.resolve(list.streams);
+            // console.log('var', singleGameStreamsArray);
           });
+          return def.promise;
+        }
+
+        function getSingleGameStreamsArray() {
+          return singleGameStreamsArray;
         }
 
       }

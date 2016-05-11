@@ -6,7 +6,7 @@
       .controller('CreateEventController', CreateEventController);
 
     CreateEventController.$inject = ['EventsService', 'TwitchService'];
-    function CreateEventController(EventsService) {
+    function CreateEventController(EventsService, TwitchService) {
       console.log('in CreateEventController');
 
 
@@ -14,10 +14,8 @@
       var that = this;
       this.newEvent = null;
 
-      // TwitchService.getAllCategories();
-      Twitch.api({method: 'streams', params: {game:'Diablo III', limit:3} }, function(error, list) {
-        console.log(list);
-      });
+      TwitchService.getSingleGameStreams('Street Fighter V', 7);
+
 
       this.addEvent = function addEvent() {
         console.log('in createEvent function');

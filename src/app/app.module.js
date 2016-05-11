@@ -23,6 +23,12 @@
       templateUrl: 'events/create-event.template.html',
       controller: 'CreateEventController',
       controllerAs: 'create'
+    })
+    .state('streams', {
+      url: '/streams',
+      templateUrl: 'streams/streams.template.html',
+      controller: 'StreamsController',
+      controllerAs: 'streams'
     });
 
   }
