@@ -9,18 +9,26 @@
     function EventsService($firebaseArray) {
 
       var events = new Firebase('https://incandescent-heat-8431.firebaseio.com/events');
+      var singleGameEvents = [];
+      var getEvents = $firebaseArray(events);
 
       return {
         getEvents: getEvents,
-        createEvent: createEvent
+        getGameEvents: getGameEvents,
+        createEvent: createEvent,
+        singleGameEvents: singleGameEvents
       };
 
-      function getEvents() {
-        return $firebaseArray(events);
+      function getGameEvents(game) {
+        events.orderByChild("game").equalTo(game).on("child_added", function(snapshot) {
+
+          console.log(snapshot.val());
+          singleGameEvents.push(snapshot.val());
+        });
       }
 
       function createEvent(newEvent) {
-        return $firebaseArray(events).$add(newEvent);
+        $firebaseArray(events).$add(newEvent);
       }
 
     }

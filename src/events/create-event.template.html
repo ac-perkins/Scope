@@ -2,7 +2,9 @@
   <input type='text' ng-model='create.newEvent.name' required placeholder='Name'>
   <input type='text' ng-model='create.newEvent.location' required placeholder='Location'>
   <input type='text' ng-model='create.newEvent.date' required placeholder='Date'>
+  <input type='text' ng-model='create.newEvent.stream' required placeholder='Event stream'>
   <input type='text' ng-model='create.newEvent.website' required placeholder='Event website'>
+  <input type='text' ng-model='create.newEvent.twitter' placeholder='Event twitter'>
   <select name='select-game' ng-model='create.newEvent.game'>
     <option value='Dota 2' selected='selected'>Dota 2</option>
     <option value='Street Fighter V'>Street Fighter V</option>
@@ -13,3 +15,9 @@
 
 
 <button ng-click='create.login()'>Login</button>
+
+<ul>
+  <li ng-repeat='event in create.singleGameEvents'>
+    <p>{{event.name}}</p> ({{event.location}}) <button ng-click='blog.deletePost(post.id)'>X</button>
+  </li>
+</ul>
