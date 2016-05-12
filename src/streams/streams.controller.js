@@ -5,15 +5,16 @@
       .module('app')
       .controller('StreamsController', StreamsController);
 
-      StreamsController.$inject = ['$sce', 'TwitchService'];
-      function StreamsController($sce, TwitchService) {
+      StreamsController.$inject = ['$sce','$stateParams', 'TwitchService'];
+      function StreamsController($sce, $stateParams, TwitchService) {
+        console.log('$stateParams', $stateParams);
         var that = this;
         this.singleGameStreamsArray = [];
 
         this.embeddedStream = $sce.trustAsResourceUrl("http://player.twitch.tv/?channel=Arlieth");
         console.log(this.embeddedStream);
 
-        var p = TwitchService.getSingleGameStreams('Street Fighter V', 10);
+        var p = TwitchService.getSingleGameStreams($stateParams.id, 10);
 
         p.then(function(streams) {
           // console.log('twitch call complete', streams);

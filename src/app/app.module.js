@@ -25,7 +25,7 @@
       controllerAs: 'create'
     })
     .state('streams', {
-      url: '/streams',
+      url: '/streams/:id',
       templateUrl: 'streams/streams.template.html',
       controller: 'StreamsController',
       controllerAs: 'streams'
