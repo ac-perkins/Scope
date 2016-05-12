@@ -10,7 +10,7 @@
         var that = this;
         this.singleGameStreamsArray = [];
 
-        this.embeddedStream = $sce.trustAsResourceUrl("http://player.twitch.tv/?channel=guildwars2");
+        this.embeddedStream = $sce.trustAsResourceUrl("http://player.twitch.tv/?channel=Arlieth");
         console.log(this.embeddedStream);
 
         var p = TwitchService.getSingleGameStreams('Street Fighter V', 10);
@@ -19,6 +19,12 @@
           // console.log('twitch call complete', streams);
           that.singleGameStreamsArray = streams;
         });
+
+        this.changeStream = function changeStream(streamName) {
+          console.log('in changeStream function');
+          console.log(streamName);
+          that.embeddedStream = $sce.trustAsResourceUrl("http://player.twitch.tv/?channel=" + streamName);
+        };
 
 
       }

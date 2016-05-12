@@ -7,22 +7,124 @@
         <meta name='description' content=''>
         <meta name='author' content='Alex Perkins'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
 
       <header>
-        <nav>
+        <!-- <nav>
           <ul>
             <li><a ui-sref='createEvent'>Create Event</a></li>
           </ul>
-        </nav>
+        </nav> -->
       </header>
+
+      <div id='stream'>
+        <iframe
+          ng-src="http://player.twitch.tv/"
+          height="360"
+          width="640"
+          frameborder="0"
+          scrolling="no"
+          allowfullscreen="true">
+        </iframe>
+      </div>
+
+
+      <nav class="navbar navbar-default navbar-static-top">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href='#' class='dropdown-toggle' data-toggle="dropdown">Dota 2</a>
+            <ul class='dropdown-menu'>
+              <ul class='list-inline'>
+                <li><a>Events Calendar</a></li>
+                <li><a>Top Streams</a></li>
+              </ul>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href='#' class='dropdown-toggle' data-toggle="dropdown">League of Legends</a>
+            <ul class='dropdown-menu'>
+              <ul class='list-inline'>
+                <li><a>Events Calendar</a></li>
+                <li><a>Top Streams</a></li>
+              </ul>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href='#' class='dropdown-toggle' data-toggle="dropdown">Street Fighter V</a>
+            <ul class='dropdown-menu'>
+              <ul class='list-inline'>
+                <li><a>Events Calendar</a></li>
+                <li><a>Top Streams</a></li>
+              </ul>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href='#' class='dropdown-toggle' data-toggle="dropdown">Counter-Strike: GO</a>
+            <ul class='dropdown-menu'>
+              <ul class='list-inline'>
+                <li><a>Events Calendar</a></li>
+                <li><a>Top Streams</a></li>
+              </ul>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href='#' class='dropdown-toggle' data-toggle="dropdown">Hearthstone</a>
+            <ul class='dropdown-menu'>
+              <ul class='list-inline'>
+                <li><a>Events Calendar</a></li>
+                <li><a>Top Streams</a></li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a class="dropdown-toggle disabled" data-toggle="dropdown">List Item1</a>
+
+            <ul class="dropdown-menu" id='Numberlist'>
+                <ul class='list-inline'>
+                <li><a href="#" id="">Events Calendar</a></li>
+                <li><a href="#" id="">Top Streams</a></li>
+                <li><a href="#" id="">3</a></li>
+                <li><a href="#" id="">4</a></li>
+                <li><a href="#" id="">5</a></li>
+                <li><a href="#" id="">6</a></li>
+                </ul>
+            </ul>
+
+        </li>
+        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">List Item2</a>
+
+            <ul class="dropdown-menu" >
+                <ul class='list-inline'>
+                <li><a href="#" id="">1</a></li>
+                <li><a href="#" id="">2</a></li>
+                <li><a href="#" id="">3</a></li>
+                <li><a href="#" id="">4</a></li>
+                <li><a href="#" id="">5</a></li>
+                <li><a href="#" id="">6</a></li>
+                </ul>
+            </ul>
+
+        </li>
+    </ul>
+</nav> -->
+
+      <div class='clearfix'></div>
 
       <section ui-view class="main-section"></section>
 
 
 
       <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
       <script src='https://angular-ui.github.io/ui-router/release/angular-ui-router.js'></script>
       <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
