@@ -3,20 +3,24 @@ a {
   cursor: pointer;
 }
 
-nav {
-  height: 50px;
-  display: block;
-  background-color: #000;
+main {
+  width: 80%;
+  margin: 0 auto;
 }
 
-.nav {
-  text-align: center;
+.navbar {
+    text-align: center;
+}
+.navbar .nav {
+    float: none;
+    display:inline-block;
 }
 
 a.dropdown-toggle {
   background-color: #000;
   color: #fff;
 }
+
 // nav li {
 //   height: 50px;
 //   float: left;
@@ -32,6 +36,22 @@ a.dropdown-toggle {
 
 .dropdown-menu {
   min-width: 300px;
+  // text-align: center;
+}
+
+.streamer-li {
+  border: 1px solid #000;
+  height: 50px;
+  margin: 1% 0;
+}
+
+.stream-logo {
+  width: 50px;
+  float: left;
+}
+
+.watch-stream-btn {
+  float: right;
 }
 
 .clearfix {

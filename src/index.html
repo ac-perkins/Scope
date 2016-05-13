@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" href="css/main.css">
     </head>
-    <body>
+    <body ng-controller='AppController as ac'>
 
       <header>
         <!-- <nav>
@@ -21,105 +21,109 @@
         </nav> -->
       </header>
 
-      <div id='stream'>
-        <iframe
-          ng-src="http://player.twitch.tv/"
-          height="360"
-          width="640"
-          frameborder="0"
-          scrolling="no"
-          allowfullscreen="true">
-        </iframe>
-      </div>
+      <main>
+        <div id='stream'>
+          <iframe
+            ng-src="{{ac.embeddedStream}}"
+            height="360"
+            width="640"
+            frameborder="0"
+            scrolling="no"
+            allowfullscreen="true">
+          </iframe>
+        </div>
 
 
-      <nav class="navbar navbar-default navbar-static-top">
-        <ul class="nav navbar-nav">
-          <li class="dropdown">
-            <a class='dropdown-toggle' data-toggle="dropdown">Dota 2</a>
-            <ul class='dropdown-menu'>
-              <ul class='list-inline'>
-                <li><a ui-sref=''>Events Calendar</a></li>
-                <li><a ui-sref='streams({ id: "Dota 2" })'>Top Streams</a></li>
-              </ul>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a class='dropdown-toggle' data-toggle="dropdown">League of Legends</a>
-            <ul class='dropdown-menu'>
-              <ul class='list-inline'>
-                <li><a>Events Calendar</a></li>
-                <li><a ui-sref='streams({ id: "League of Legends" })'>Top Streams</a></li>
-              </ul>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a class='dropdown-toggle' data-toggle="dropdown">Street Fighter V</a>
-            <ul class='dropdown-menu'>
-              <ul class='list-inline'>
-                <li><a>Events Calendar</a></li>
-                <li><a ui-sref='streams({ id: "Street Fighter V" })'>Top Streams</a></li>
-              </ul>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a class='dropdown-toggle' data-toggle="dropdown">Counter-Strike: GO</a>
-            <ul class='dropdown-menu'>
-              <ul class='list-inline'>
-                <li><a>Events Calendar</a></li>
-                <li><a ui-sref='streams({ id: "Counter-Strike: Global Offensive" })'>Top Streams</a></li>
-              </ul>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a class='dropdown-toggle' data-toggle="dropdown">Hearthstone</a>
-            <ul class='dropdown-menu'>
-              <ul class='list-inline'>
-                <li><a>Events Calendar</a></li>
-                <li><a ui-sref='streams({ id: "Hearthstone: Heroes of Warcraft" })'>Top Streams</a></li>
-              </ul>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- <nav class="navbar navbar-default navbar-static-top" role="navigation">
-    <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a class="dropdown-toggle disabled" data-toggle="dropdown">List Item1</a>
-
-            <ul class="dropdown-menu" id='Numberlist'>
+        <nav class="navbar navbar-default navbar-static-top">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class='dropdown-toggle' data-toggle="dropdown">Dota 2</a>
+              <ul class='dropdown-menu'>
                 <ul class='list-inline'>
-                <li><a href="#" id="">Events Calendar</a></li>
-                <li><a href="#" id="">Top Streams</a></li>
-                <li><a href="#" id="">3</a></li>
-                <li><a href="#" id="">4</a></li>
-                <li><a href="#" id="">5</a></li>
-                <li><a href="#" id="">6</a></li>
+                  <li><a ui-sref=''>Events Calendar</a></li>
+                  <li><a ui-sref='streams({ id: "Dota 2" })'>Top Streams</a></li>
                 </ul>
-            </ul>
-
-        </li>
-        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">List Item2</a>
-
-            <ul class="dropdown-menu" >
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class='dropdown-toggle' data-toggle="dropdown">League of Legends</a>
+              <ul class='dropdown-menu'>
                 <ul class='list-inline'>
-                <li><a href="#" id="">1</a></li>
-                <li><a href="#" id="">2</a></li>
-                <li><a href="#" id="">3</a></li>
-                <li><a href="#" id="">4</a></li>
-                <li><a href="#" id="">5</a></li>
-                <li><a href="#" id="">6</a></li>
+                  <li><a>Events Calendar</a></li>
+                  <li><a ui-sref='streams({ id: "League of Legends" })'>Top Streams</a></li>
                 </ul>
-            </ul>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class='dropdown-toggle' data-toggle="dropdown">Street Fighter V</a>
+              <ul class='dropdown-menu'>
+                <ul class='list-inline'>
+                  <li><a>Events Calendar</a></li>
+                  <li><a ui-sref='streams({ id: "Street Fighter V" })'>Top Streams</a></li>
+                </ul>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class='dropdown-toggle' data-toggle="dropdown">Counter-Strike: GO</a>
+              <ul class='dropdown-menu'>
+                <ul class='list-inline'>
+                  <li><a>Events Calendar</a></li>
+                  <li><a ui-sref='streams({ id: "Counter-Strike: Global Offensive" })'>Top Streams</a></li>
+                </ul>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class='dropdown-toggle' data-toggle="dropdown">Hearthstone</a>
+              <ul class='dropdown-menu'>
+                <ul class='list-inline'>
+                  <li><a>Events Calendar</a></li>
+                  <li><a ui-sref='streams({ id: "Hearthstone: Heroes of Warcraft" })'>Top Streams</a></li>
+                </ul>
+              </ul>
+            </li>
+          </ul>
+        </nav>
 
-        </li>
-    </ul>
-</nav> -->
+        <!-- <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a class="dropdown-toggle disabled" data-toggle="dropdown">List Item1</a>
 
-      <div class='clearfix'></div>
+              <ul class="dropdown-menu" id='Numberlist'>
+                  <ul class='list-inline'>
+                  <li><a href="#" id="">Events Calendar</a></li>
+                  <li><a href="#" id="">Top Streams</a></li>
+                  <li><a href="#" id="">3</a></li>
+                  <li><a href="#" id="">4</a></li>
+                  <li><a href="#" id="">5</a></li>
+                  <li><a href="#" id="">6</a></li>
+                  </ul>
+              </ul>
 
-      <section ui-view class="main-section"></section>
+          </li>
+          <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">List Item2</a>
+
+              <ul class="dropdown-menu" >
+                  <ul class='list-inline'>
+                  <li><a href="#" id="">1</a></li>
+                  <li><a href="#" id="">2</a></li>
+                  <li><a href="#" id="">3</a></li>
+                  <li><a href="#" id="">4</a></li>
+                  <li><a href="#" id="">5</a></li>
+                  <li><a href="#" id="">6</a></li>
+                  </ul>
+              </ul>
+
+          </li>
+      </ul>
+  </nav> -->
+
+        <div class='clearfix'></div>
+
+        <section ui-view class="main-section"></section>
+      </main>
+
+
 
 
 
