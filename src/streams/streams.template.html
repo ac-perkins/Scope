@@ -8,7 +8,7 @@
   allowfullscreen="true">
 </iframe> -->
 
-
+<p ng-hide='streams.singleGameStreamsArray'>Loading...</p>
 <ul>
   <li class='streamer-li' ng-repeat='stream in streams.singleGameStreamsArray'>
     <img class='stream-logo' ng-src='{{stream.channel.logo}}'>

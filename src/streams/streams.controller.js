@@ -9,7 +9,7 @@
       function StreamsController($stateParams, TwitchService) {
         console.log('$stateParams', $stateParams);
         var that = this;
-        this.singleGameStreamsArray = [];
+        this.singleGameStreamsArray = null;
 
         var p = TwitchService.getSingleGameStreams($stateParams.id, 10);
 
@@ -18,11 +18,6 @@
           that.singleGameStreamsArray = streams;
         });
 
-        // this.changeStream = function changeStream(streamName) {
-        //   console.log('in changeStream function');
-        //   console.log(streamName);
-        //   that.embeddedStream = $sce.trustAsResourceUrl("http://player.twitch.tv/?channel=" + streamName);
-        // };
 
 
       }

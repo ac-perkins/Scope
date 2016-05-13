@@ -9,7 +9,7 @@
       function EventsController($stateParams, EventsService) {
 
         var that = this;
-        this.singleGameEventsArray = [];
+        this.singleGameEventsArray = null;
 
         // console.log(EventsService.getGameEvents($stateParams.id));
 
