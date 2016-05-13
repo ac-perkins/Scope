@@ -10,15 +10,22 @@ main {
 
 .navbar {
     text-align: center;
+    background-color: black
 }
+
 .navbar .nav {
     float: none;
     display:inline-block;
 }
 
-a.dropdown-toggle {
-  background-color: #000;
+.navbar-default .navbar-nav>li>a {
   color: #fff;
+}
+
+a.dropdown-toggle {
+  // background-color: #000;
+  color: white;
+  font-family: 'Oswald', sans-serif;
 }
 
 // nav li {
