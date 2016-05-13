@@ -18,8 +18,14 @@
       // controller: 'HomeViewController',
       // controllerAs: 'home'
     })
+    .state('events', {
+      url: '/events/:id',
+      templateUrl: 'events/events.template.html',
+      controller: 'EventsController',
+      controllerAs: 'events'
+    })
     .state('createEvent', {
-      url: '/create-event',
+      url: '/event/create',
       templateUrl: 'events/create-event.template.html',
       controller: 'CreateEventController',
       controllerAs: 'create'

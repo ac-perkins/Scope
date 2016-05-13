@@ -5,8 +5,8 @@
       .module('app')
       .factory('EventsService', EventsService);
 
-    EventsService.$inject = ['$firebaseArray'];
-    function EventsService($firebaseArray) {
+    EventsService.$inject = ['$q', '$firebaseArray'];
+    function EventsService($q, $firebaseArray) {
 
       var events = new Firebase('https://incandescent-heat-8431.firebaseio.com/events');
       var singleGameEvents = [];
@@ -16,15 +16,18 @@
         getEvents: getEvents,
         getGameEvents: getGameEvents,
         createEvent: createEvent,
-        singleGameEvents: singleGameEvents
       };
 
       function getGameEvents(game) {
+        singleGameEvents = [];
+        var def = $q.defer();
         events.orderByChild("game").equalTo(game).on("child_added", function(snapshot) {
 
           console.log(snapshot.val());
           singleGameEvents.push(snapshot.val());
+          def.resolve(singleGameEvents);
         });
+        return def.promise;
       }
 
       function createEvent(newEvent) {

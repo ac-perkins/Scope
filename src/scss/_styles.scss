@@ -49,7 +49,7 @@ a.dropdown-toggle {
 }
 
 .dropdown-menu {
-  min-width: 300px;
+  // min-width: 300px;
   background-color: #000;
   margin-top: 10px;
   font-family: 'Oswald', sans-serif;
@@ -62,11 +62,21 @@ a.dropdown-toggle {
 }
 
 .streamer-li {
-  // border: 1px solid #000;
+  border: 1px solid #000;
   height: 50px;
   margin: 1% 0;
-  background-color: #000;
-  color: #fff;
+  // background-color: #000;
+  // color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9em;
+}
+
+.event-li {
+  border: 1px solid #000;
+  height: 50px;
+  margin: 1% 0;
+  // background-color: #000;
+  // color: #fff;
   font-family: 'Oswald', sans-serif;
   font-size: 0.9em;
 }

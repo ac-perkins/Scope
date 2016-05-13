@@ -5,16 +5,14 @@
       .module('app')
       .controller('CreateEventController', CreateEventController);
 
-    CreateEventController.$inject = ['EventsService', 'TwitchService'];
-    function CreateEventController(EventsService, TwitchService) {
+    CreateEventController.$inject = ['EventsService'];
+    function CreateEventController(EventsService) {
       console.log('in CreateEventController');
 
 
       this.singleGameEvents = EventsService.singleGameEvents;
       var that = this;
       this.newEvent = null;
-
-      TwitchService.getSingleGameStreams('Street Fighter V', 7);
 
 
       this.addEvent = function addEvent() {
