@@ -14,7 +14,7 @@
 <ul>
   <li class='streamer-li' ng-repeat='stream in streams.singleGameStreamsArray'>
     <img class='stream-logo' ng-src='{{stream.channel.logo}}'>
-    <p>{{stream.channel.display_name}} {{stream.viewers}} viewers</p>
-    <button class='watch-stream-btn' ng-click="ac.changeStream(stream.channel.name)">Go to stream</button>
+    <p>{{stream.channel.display_name}}</p> <p>{{stream.viewers}} viewers</p>
+    <button class='watch-stream-btn' ng-click="ac.changeStream(stream.channel.name)">Open stream</button>
   </li>
 </ul>

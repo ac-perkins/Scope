@@ -4,13 +4,16 @@ a {
 }
 
 main {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 
 .navbar {
     text-align: center;
-    background-color: black
+    background-color: black;
+    border-bottom: 2px solid #4DCFFF;
+    // box-sizing: border-box;
+    height: 50px;
 }
 
 .navbar .nav {
@@ -22,39 +25,61 @@ main {
   color: #fff;
 }
 
+.navbar-default .navbar-nav>li>a:hover {
+  color: #4DCFFF;
+}
+
 a.dropdown-toggle {
-  // background-color: #000;
   color: white;
   font-family: 'Oswald', sans-serif;
 }
 
-// nav li {
-//   height: 50px;
-//   float: left;
-//   margin: 0 3%;
-//   // margin-top: 15px;
-//   color: #fff;
-// }
-
 #stream {
   width: 640px;
-  margin: 2% auto;
+  margin-right: 2%;
+  float: right;
+}
+
+// .dropdown-toggle:hover {
+//   color: #4DCFFF;
+// }
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 .dropdown-menu {
   min-width: 300px;
-  // text-align: center;
+  background-color: #000;
+  margin-top: 10px;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  // border-top: 2px solid #4DCFFF;
+}
+
+.list-inline li{
+  margin: 0 2%;
 }
 
 .streamer-li {
-  border: 1px solid #000;
+  // border: 1px solid #000;
   height: 50px;
   margin: 1% 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9em;
 }
 
 .stream-logo {
   width: 50px;
   float: left;
+}
+
+.main-section {
+  float: left;
+  width: 35%;
+  margin-left: 2%;
 }
 
 .watch-stream-btn {

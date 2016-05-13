@@ -23,17 +23,6 @@
       </header>
 
       <main>
-        <div id='stream'>
-          <iframe
-            ng-src="{{ac.embeddedStream}}"
-            height="360"
-            width="640"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen="true">
-          </iframe>
-        </div>
-
 
         <nav class="navbar navbar-default navbar-static-top">
           <ul class="nav navbar-nav">
@@ -74,7 +63,7 @@
               </ul>
             </li>
             <li class="dropdown">
-              <a class='dropdown-toggle' data-toggle="dropdown">Hearthstone</a>
+              <a class='dropdown-toggle disabled' data-toggle="dropdown">Hearthstone</a>
               <ul class='dropdown-menu'>
                 <ul class='list-inline'>
                   <li><a>Events Calendar</a></li>
@@ -85,43 +74,22 @@
           </ul>
         </nav>
 
-        <!-- <nav class="navbar navbar-default navbar-static-top" role="navigation">
-      <ul class="nav navbar-nav">
-          <li class="dropdown">
-            <a class="dropdown-toggle disabled" data-toggle="dropdown">List Item1</a>
+        <div id='stream'>
+          <iframe
+            ng-src="{{ac.embeddedStream}}"
+            height="360"
+            width="640"
+            frameborder="0"
+            scrolling="no"
+            allowfullscreen="true">
+          </iframe>
+        </div>
 
-              <ul class="dropdown-menu" id='Numberlist'>
-                  <ul class='list-inline'>
-                  <li><a href="#" id="">Events Calendar</a></li>
-                  <li><a href="#" id="">Top Streams</a></li>
-                  <li><a href="#" id="">3</a></li>
-                  <li><a href="#" id="">4</a></li>
-                  <li><a href="#" id="">5</a></li>
-                  <li><a href="#" id="">6</a></li>
-                  </ul>
-              </ul>
 
-          </li>
-          <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">List Item2</a>
-
-              <ul class="dropdown-menu" >
-                  <ul class='list-inline'>
-                  <li><a href="#" id="">1</a></li>
-                  <li><a href="#" id="">2</a></li>
-                  <li><a href="#" id="">3</a></li>
-                  <li><a href="#" id="">4</a></li>
-                  <li><a href="#" id="">5</a></li>
-                  <li><a href="#" id="">6</a></li>
-                  </ul>
-              </ul>
-
-          </li>
-      </ul>
-  </nav> -->
-
-        <div class='clearfix'></div>
+        <!-- <div class='clearfix'></div> -->
 
         <section ui-view class="main-section"></section>
+
       </main>
 
 
