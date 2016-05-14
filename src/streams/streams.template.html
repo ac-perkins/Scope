@@ -11,6 +11,7 @@
 <p ng-hide='streams.singleGameStreamsArray'>Loading...</p>
 <ul>
   <li class='streamer-li' ng-repeat='stream in streams.singleGameStreamsArray'>
+    <img class='stream-logo' ng-hide='stream.channel.logo' ng-src='{{streams.noUserIcon.img}}'>
     <img class='stream-logo' ng-src='{{stream.channel.logo}}'>
     {{stream.channel.display_name}} {{stream.viewers}} viewers
     <button class='watch-stream-btn' ng-click="ac.changeStream(stream.channel.name)">Open stream</button>
