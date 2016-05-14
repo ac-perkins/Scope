@@ -1,15 +1,17 @@
-<form ng-submit='create.addEvent()'>
-  <input type='text' ng-model='create.newEvent.name' required placeholder='Name'>
-  <input type='text' ng-model='create.newEvent.location' required placeholder='Location'>
-  <input type='text' ng-model='create.newEvent.date' required placeholder='Date'>
-  <input type='text' ng-model='create.newEvent.stream' required placeholder='Event stream'>
-  <input type='text' ng-model='create.newEvent.website' required placeholder='Event website'>
-  <input type='text' ng-model='create.newEvent.twitter' placeholder='Event twitter'>
-  <select name='select-game' ng-model='create.newEvent.game'>
-    <option value='Dota 2' selected='selected'>Dota 2</option>
-    <option value='Street Fighter V'>Street Fighter V</option>
-    <option value='HearthStone'>HearthStone</option>
-  </select>
+<form class='create-event' ng-submit='create.addEvent()'>
+  <p>Event name:<input type='text' class='form-control' ng-model='create.newEvent.name' required placeholder='Name'></p>
+  <p>Location:<input type='text' class='form-control' ng-model='create.newEvent.location' required placeholder='Location'></p>
+  <p>Date:<input type='text' class='form-control' ng-model='create.newEvent.date' required placeholder='Date'></p>
+  <p>Stream Url:<input type='text' class='form-control' ng-model='create.newEvent.stream' required placeholder='Event stream'></p>
+  <p>Website:<input type='text' class='form-control' ng-model='create.newEvent.website' required placeholder='Event website'></p>
+  <p>Twitter:<input type='text' class='form-control' ng-model='create.newEvent.twitter' placeholder='Event twitter'></p>
+  <p>Game:
+    <select name='select-game' class='form-control' ng-model='create.newEvent.game' required>
+      <option ng-repeat='game in create.gameList' value='{{game.id}}'>{{game.name}}</option>
+      <!-- <option value='Street Fighter V'>Street Fighter V</option>
+      <option value='HearthStone'>HearthStone</option> -->
+    </select>
+  </p>
   <button>Create new Event</button>
 </form>
 
