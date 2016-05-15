@@ -11,12 +11,10 @@
         var that = this;
         this.singleGameEventsArray = null;
 
-        // console.log(EventsService.getGameEvents($stateParams.id));
-
-        EventsService.getGameEvents($stateParams.id).then(function(events) {
+        EventsService.getSingleGameEvents($stateParams.id).then(function(events) {
           that.singleGameEventsArray = events;
-          console.log(that.singleGameEventsArray);
         });
+
       }
 
 })();
