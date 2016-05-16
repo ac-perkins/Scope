@@ -1,0 +1,18 @@
+<p>{{es.event.name}}</p>
+
+
+<form class='create-event' ng-submit='es.editEvent()'>
+  <p>Event name:<input type='text' class='form-control' ng-model='es.event.name' required placeholder='Name'></p>
+  <p>Location:<input type='text' class='form-control' ng-model='es.event.location' required placeholder='Location'></p>
+  <p>Date:<input type='text' class='form-control' ng-model='es.event.date' required placeholder='Date'></p>
+  <p>Stream Url:<input type='text' class='form-control' ng-model='es.event.stream' required placeholder='Event stream'></p>
+  <p>Website:<input type='text' class='form-control' ng-model='es.event.website' required placeholder='Event website'></p>
+  <p>Twitter:<input type='text' class='form-control' ng-model='es.event.twitter' placeholder='Event twitter'></p>
+  <p>Game:
+    <select name='select-game' class='form-control' ng-model='es.event.game' required>
+      <option ng-repeat='game in es.gameList' value='{{game.id}}'>{{game.name}}</option>
+    </select>
+  </p>
+  <button>Edit this Event</button>
+  <button>Cancel</button>
+</form>

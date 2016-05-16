@@ -5,17 +5,20 @@
       .module('app')
       .factory('EventsService', EventsService);
 
-    EventsService.$inject = ['$q', '$firebaseArray'];
-    function EventsService($q, $firebaseArray) {
+    EventsService.$inject = ['$q', '$firebaseObject', '$firebaseArray'];
+    function EventsService($q, $firebaseObject, $firebaseArray) {
 
       var events = new Firebase('https://incandescent-heat-8431.firebaseio.com/events');
+      // var eventObj =
       var allEvents = [];
       var singleGameEvents = [];
 
       return {
         createEvent: createEvent,
         getAllEvents: getAllEvents,
-        getSingleGameEvents: getSingleGameEvents
+        getSingleGameEvents: getSingleGameEvents,
+        getEventObject: getEventObject,
+        editEventObject: editEventObject
       };
 
       function createEvent(newEvent) {      // TODO: ERROR HANDLING
@@ -52,6 +55,32 @@
             console.log("Error:", error);
             return error;
           });
+      }
+
+      function getEventObject(eventId) {
+        var eventObj = new Firebase('https://incandescent-heat-8431.firebaseio.com/events/' + eventId);
+        return $firebaseObject(eventObj).$loaded()
+          .then(function(obj) {
+            console.log('$firebaseObject', obj);
+            return obj;
+          });
+      }
+
+      function editEventObject(eventId, editedEvent) {
+        var eventObj = new Firebase('https://incandescent-heat-8431.firebaseio.com/events/' + eventId);
+        console.log('editedEvent', editedEvent);
+        // eventObj = editedEvent;
+        eventObj.update(
+          {
+            date: editedEvent.date,
+            game: editedEvent.game,
+            location: editedEvent.location,
+            name: editedEvent.name,
+            stream: editedEvent.stream,
+            twitter: editedEvent.twitter,
+            website: editedEvent.website
+          }
+        );
       }
 
     }
