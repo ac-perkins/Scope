@@ -25,7 +25,7 @@
               <a class='dropdown-toggle' data-toggle="dropdown">{{item.name}}</a>
               <ul class='dropdown-menu'>
                   <li><a ui-sref='streams({ id: item.id })'>Top Streams</a></li>
-                  <li><a ui-sref='events({ id: item.id })'>Events Calendar</a></li>
+                  <li><a ui-sref='events({ id: item.id })'>Event Calendar</a></li>
               </ul>
             </li>
           </ul>
@@ -43,14 +43,24 @@
         </div>
 
 
-        <!-- <div class='clearfix'></div> -->
-
         <section ui-view class="main-section"></section>
 
+        <div class='clearfix'></div>
+        <div class="push"></div>
       </main>
 
 
 
+      <footer>
+        <nav>
+          <ul>
+            <li ng-show='!ac.authData'><a ng-click='ac.login()'>Login</a></li>
+            <li ng-show='ac.authData'><a ng-click='ac.logout()'>Logout</a></li>
+            <li ng-show='ac.authData'><a ui-sref='editAllEvents'>Edit Event</a></li>
+            <li ng-show='ac.authData'><a ui-sref='createEvent'>Create Event</a></li>
+          </ul>
+        </nav>
+      </footer>
 
 
       <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
