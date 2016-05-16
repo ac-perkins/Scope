@@ -10,6 +10,9 @@
         var that = this;
         this.authData = null;
         this.embeddedStream = $sce.trustAsResourceUrl("http://player.twitch.tv/?channel=");
+        this.streamHeight = 360;
+        this.streamWidth = 640;
+        this.largeStream = false;
 
         this.changeStream = function changeStream(streamName) {
           console.log('in changeStream function');
@@ -39,6 +42,14 @@
           var authObj = $firebaseAuth(ref);
           authObj.$unauth();
           this.authData = null;               // TODO: put this inside unauth promise
+        };
+
+        this.theaterMode = function theaterMode() {
+          this.largeStream = true;
+          this.streamHeight = window.innerHeight * 0.8;
+          this.streamWidth = window.innerWidth * 0.75;
+
+
         };
 
       }

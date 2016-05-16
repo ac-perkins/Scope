@@ -34,16 +34,18 @@
         <div id='stream'>
           <iframe
             ng-src="{{ac.embeddedStream}}"
-            height="360"
-            width="640"
+            height="{{ac.streamHeight}}"
+            width="{{ac.streamWidth}}"
             frameborder="0"
             scrolling="no"
             allowfullscreen="true">
           </iframe>
+
+          <button ng-click='ac.theaterMode()'>Theater Mode</button>
         </div>
 
 
-        <section ui-view class="main-section"></section>
+        <section ng-show='!ac.largeStream' ui-view class="main-section"></section>
 
         <div class='clearfix'></div>
         <div class="push"></div>
