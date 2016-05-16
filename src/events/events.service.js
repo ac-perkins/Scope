@@ -18,7 +18,8 @@
         getAllEvents: getAllEvents,
         getSingleGameEvents: getSingleGameEvents,
         getEventObject: getEventObject,
-        editEventObject: editEventObject
+        editEventObject: editEventObject,
+        deleteEventObject: deleteEventObject
       };
 
       function createEvent(newEvent) {      // TODO: ERROR HANDLING
@@ -80,7 +81,17 @@
             twitter: editedEvent.twitter,
             website: editedEvent.website
           }
-        );
+        ); // TODO: get promise
+      }
+
+      function deleteEventObject(eventId) {
+        var eventObj = new Firebase('https://incandescent-heat-8431.firebaseio.com/events/' + eventId);
+        $firebaseObject(eventObj).$remove().then(function(ref) {
+          // data has been deleted locally and in the database
+          console.log(ref);
+        }, function(error) {
+          console.log("Error:", error);
+        });
       }
 
     }

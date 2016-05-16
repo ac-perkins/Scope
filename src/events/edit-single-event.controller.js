@@ -24,6 +24,10 @@
           EventsService.editEventObject($stateParams.id, that.event);
         };
 
+        this.deleteEvent = function deleteEvent() {
+          EventsService.deleteEventObject($stateParams.id);
+        };
+
       }
 
 })();
