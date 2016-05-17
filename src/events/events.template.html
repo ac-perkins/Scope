@@ -1,5 +1,6 @@
 
-<p ng-hide='events.singleGameEventsArray'>Loading...</p>
+<p ng-hide='events.singleGameEventsArray || events.errorMessage'>Loading...</p>
+<p class='error-msg' ng-show='events.errorMessage'>{{events.errorMessage}}</p>
 <ul>
   <li class='event-li' ng-repeat='event in events.singleGameEventsArray'>
     {{event.name}} {{event.location}}
