@@ -7,18 +7,20 @@
 
       EditEventController.$inject = ['$stateParams', 'EventsService'];
       function EditEventController($stateParams, EventsService) {
-        console.log('in EditEventController');
-        // console.log($stateParams.id);
+
         var that = this;
-
         this.allEvents = null;
-        EventsService.getAllEvents().then(function(events) {
-          console.log(events);
-          that.allEvents = events;
-        });
-        // console.log(this.allEvents);
+        this.errorMessage = "";
 
-        // console.log(EventsService.getEventObject($stateParams.id));
+        EventsService.getAllEvents()
+          .then(function(events) {
+            console.log(events);
+            that.allEvents = events;
+          })
+          .catch(function(err) {
+            console.log('catch error', err);
+            that.errorMessage = "The server is not responding. Please try again shortly.";
+          });
       }
 
 })();
