@@ -18,7 +18,7 @@
           })
           .catch(function (err) {
             console.log('catch error', err);
-            that.errorMessage = "The Firebase server is not responding. Please try again shortly.";
+            that.errorMessage = "The server is not responding. Please try again shortly.";
           });
 
       }
