@@ -11,13 +11,16 @@
         var that = this;
         this.singleGameStreamsArray = null;
         this.noUserIcon = {img: 'http://s.jtvnw.net/jtv_user_pictures/hosted_images/GlitchIcon_WhiteonPurple.png'};
+        this.errorMessage = "";
 
-        var p = TwitchService.getSingleGameStreams($stateParams.id, 10);
-
-        p.then(function(streams) {
-          // console.log('twitch call complete', streams);
-          that.singleGameStreamsArray = streams;
-        });
+        TwitchService.getSingleGameStreams($stateParams.id, 10)
+          .then(function(streams) {
+            that.singleGameStreamsArray = streams;
+          })
+          .catch(function(err) {
+            console.log('catch error', err);
+            that.errorMessage = "Twitch is not responding to requests. Please try again shortly.";
+          });
 
 
 

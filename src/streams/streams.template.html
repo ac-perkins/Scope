@@ -1,14 +1,6 @@
 
-<!-- <iframe
-  ng-src="{{streams.embeddedStream}}"
-  height="360"
-  width="640"
-  frameborder="0"
-  scrolling="no"
-  allowfullscreen="true">
-</iframe> -->
-
-<p ng-hide='streams.singleGameStreamsArray'>Loading...</p>
+<p ng-hide='streams.singleGameStreamsArray || streams.errorMessage'>Loading...</p>
+<p class='error-msg' ng-show='streams.errorMessage'>{{streams.errorMessage}}</p>
 <ul>
   <li class='streamer-li' ng-repeat='stream in streams.singleGameStreamsArray'>
     <img class='stream-logo' ng-hide='stream.channel.logo' ng-src='{{streams.noUserIcon.img}}'>
