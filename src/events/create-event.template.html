@@ -7,19 +7,11 @@
   <p>Twitter:<input type='text' class='form-control' ng-model='create.newEvent.twitter' placeholder='Event twitter'></p>
   <p>Game:
     <select name='select-game' class='form-control' ng-model='create.newEvent.game' required>
+      <option value='' selected>Select a game...</option>
       <option ng-repeat='game in create.gameList' value='{{game.id}}'>{{game.name}}</option>
-      <!-- <option value='Street Fighter V'>Street Fighter V</option>
-      <option value='HearthStone'>HearthStone</option> -->
     </select>
   </p>
   <button>Create new Event</button>
 </form>
 
-
-<button ng-click='create.login()'>Login</button>
-
-<ul>
-  <li ng-repeat='event in create.singleGameEvents'>
-    <p>{{event.name}}</p> ({{event.location}}) <button ng-click='blog.deletePost(post.id)'>X</button>
-  </li>
-</ul>
+<p class='error-msg' ng-show='create.errorMessage'>{{create.errorMessage}}</p>
