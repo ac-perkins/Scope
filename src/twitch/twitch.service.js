@@ -19,9 +19,13 @@
           var def = $q.defer();
           Twitch.api({method: 'streams', params: {game: gameName, limit: maxStreams} }, function(error, list) {
             console.log('In getSingleGameStreams success', list.streams);
-            singleGameStreamsArray = list.streams;
-            def.resolve(list.streams);
-            // console.log('var', singleGameStreamsArray);
+            if (error) {
+              console.log('Error', error);
+              def.reject(error);
+            } else {
+              singleGameStreamsArray = list.streams;
+              def.resolve(list.streams);
+            }
           });
           return def.promise;
         }
