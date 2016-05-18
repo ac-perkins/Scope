@@ -21,7 +21,7 @@ main {
     border-bottom: 2px solid #4DCFFF;
     // box-sizing: border-box;
     height: 50px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .navbar .nav {
@@ -47,6 +47,8 @@ footer {
   background-color: black;
   border-top: 2px solid #4DCFFF;
   margin: 0 auto;
+  vertical-align: middle;
+  line-height: 50px;
   // margin-top: 5%;
   // height: 50px;
 }
@@ -56,13 +58,18 @@ footer li {
   float: right;
 }
 
+footer nav {
+  float: right;
+  border: none;
+}
+
 footer, .push {
 height: 50px;
 }
 
 #stream {
-  width: 640px;
-  margin-right: 2%;
+  width: 720px;
+  margin-right: 1%;
   float: right;
 }
 
@@ -83,6 +90,10 @@ height: 50px;
   // border-top: 2px solid #4DCFFF;
 }
 
+.dropdown-menu>li>a:hover {
+  background-color: #4DCFFF;
+}
+
 .dropdown-menu>li>a {
   color: #fff;
 }
@@ -93,23 +104,48 @@ height: 50px;
 
 .streamer-li {
   border: 1px solid #000;
-  // border-radius: 5px;
+  border-radius: 2px;
   height: 50px;
-  margin: 1% 0;
+  margin-bottom: 2%;
   // background-color: #000;
   // color: #fff;
   font-family: 'Oswald', sans-serif;
-  font-size: 0.9em;
+  font-size: 0.95em;
+  line-height: 48px;
+  box-shadow: 1px 0px 1px;
+}
+
+.watch-stream-btn {
+  line-height: 0px;
+  border-radius: 0px;
+  background-color: #3EA6CC;
+  height: 100%;
+  width: 20%;
+  outline: none;
+  margin-left: 15px;
+  border: none;
+  float: right;
+}
+
+.watch-stream-btn:active {
+  outline: none;
+}
+
+.watch-stream-btn:focus {
+  outline: none;
 }
 
 .event-li {
   border: 1px solid #000;
+  border-radius: 2px;
   height: 50px;
   margin: 1% 0;
   // background-color: #000;
   // color: #fff;
   font-family: 'Oswald', sans-serif;
-  font-size: 0.9em;
+  font-size: 0.95em;
+  line-height: 48px;
+  box-shadow: 1px 0px 1px;
 }
 
 // .create-event input{
@@ -119,16 +155,27 @@ height: 50px;
 .stream-logo {
   width: 48px;
   float: left;
+  margin-right: 2%;
+  border-right: 1px solid black;
+  box-sizing: content-box;
+}
+
+.viewers {
+  float: right;
+  line-height: 15px;
+  padding-top: 10px;
 }
 
 .main-section {
   float: left;
-  width: 35%;
-  margin-left: 2%;
+  width: 30%;
+  margin-left: 1%;
 }
 
-.watch-stream-btn {
-  float: right;
+.error-msg {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 2%;
 }
 
 .clearfix {
