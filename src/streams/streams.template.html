@@ -5,7 +5,11 @@
   <li class='streamer-li' ng-repeat='stream in streams.singleGameStreamsArray'>
     <img class='stream-logo' ng-hide='stream.channel.logo' ng-src='{{streams.noUserIcon.img}}'>
     <img class='stream-logo' ng-src='{{stream.channel.logo}}'>
-    {{stream.channel.display_name}} {{stream.viewers}} viewers
-    <button class='watch-stream-btn' ng-click="ac.changeStream(stream.channel.name)">Open stream</button>
+    {{stream.channel.display_name}}
+    <button class='watch-stream-btn btn btn-primary' ng-click="ac.changeStream(stream.channel.name)">Watch</button>
+    <aside class='viewers'>
+      <p>{{stream.viewers}}</p> viewers
+    </aside>
+
   </li>
 </ul>
