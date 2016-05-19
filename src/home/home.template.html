@@ -1,1 +1,10 @@
-<p>Home</p>
+<p>Upcoming Events</p>
+
+<p ng-hide='home.upcomingEvents || home.errorMessage'>Loading...</p>
+<p class='error-msg' ng-show='home.errorMessage'>{{home.errorMessage}}</p>
+<ul>
+  <li class='event-li' ng-repeat='event in home.upcomingEvents'>
+    {{event.name}} {{event.location}}
+    <a class='event-website' href='{{event.website}}' target="_blank">Website</a>
+  </li>
+</ul>
