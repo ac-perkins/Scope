@@ -78,12 +78,15 @@ module.exports = function(grunt) {
             'node_modules/angular/angular.js',
             'node_modules/angular-ui-router/release/angular-ui-router.js',
             'node_modules/angular-mocks/angular-mocks.js',
-            'dev/**/*.js',
+            'node_modules/angularfire/dist/angularfire.js',
+            'node_modules/firebase/lib/firebase-web.js',
+            'src/app/app.module.js',
+            'src/events/events.service.js',   // might have to go to individual files
             'test/specs/**/*.js'
           ],
 
           preprocessors: {
-            'dev/create-author/*.js': ['coverage']
+            'src/**/*.js': ['coverage']
           },
           reporters: ['progress', 'coverage'],
           coverageReporter: {
