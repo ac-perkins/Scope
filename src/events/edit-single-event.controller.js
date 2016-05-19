@@ -13,6 +13,8 @@
         this.gameList = NavService.navArray;
         this.errorMessage = '';
 
+        $( '#edit-datepicker' ).datepicker();
+
         EventsService.getEventObject($stateParams.id)
           .then(function(eventObj) {
             console.log(eventObj);

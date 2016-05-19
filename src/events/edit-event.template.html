@@ -5,7 +5,7 @@
 <form class='create-event' ng-submit='es.editEvent()'>
   <p>Event name:<input type='text' class='form-control' ng-model='es.event.name' ng-model-options="{updateOn: 'submit'}" required placeholder='Name'></p>
   <p>Location:<input type='text' class='form-control' ng-model='es.event.location' required placeholder='Location'></p>
-  <p>Date:<input type='text' class='form-control' ng-model='es.event.date' required placeholder='Date'></p>
+  <p>Date:<input type="text" id="edit-datepicker" class='form-control' ng-model='es.event.date' required></p>
   <p>Stream Url:<input type='text' class='form-control' ng-model='es.event.stream' required placeholder='Event stream'></p>
   <p>Website:<input type='text' class='form-control' ng-model='es.event.website' required placeholder='Event website'></p>
   <p>Twitter:<input type='text' class='form-control' ng-model='es.event.twitter' placeholder='Event twitter'></p>

@@ -14,6 +14,8 @@
       this.newEvent = null;
       this.errorMessage = '';
 
+      $( '#datepicker' ).datepicker();
+
       this.addEvent = function addEvent() {
         EventsService.createEvent(that.newEvent)
           .then(function(ref) {
