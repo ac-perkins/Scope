@@ -14,9 +14,9 @@
     $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: 'home/home.template.html'
-      // controller: 'HomeViewController',
-      // controllerAs: 'home'
+      templateUrl: 'home/home.template.html',
+      controller: 'HomeController',
+      controllerAs: 'home'
     })
     .state('events', {
       url: '/events/:id',
@@ -29,6 +29,18 @@
       templateUrl: 'events/create-event.template.html',
       controller: 'CreateEventController',
       controllerAs: 'create'
+    })
+    .state('editAllEvents', {
+      url: '/event/edit',
+      templateUrl: 'events/edit-all-events.template.html',
+      controller: 'EditEventController',
+      controllerAs: 'edit'
+    })
+    .state('editEvent', {
+      url: '/event/edit/:id',
+      templateUrl: 'events/edit-event.template.html',
+      controller: 'EditSingleEventController',
+      controllerAs: 'es'
     })
     .state('streams', {
       url: '/streams/:id',
