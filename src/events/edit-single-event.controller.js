@@ -5,15 +5,13 @@
       .module('app')
       .controller('EditSingleEventController', EditSingleEventController);
 
-      EditSingleEventController.$inject = ['$stateParams', 'EventsService', 'NavService'];
-      function EditSingleEventController($stateParams, EventsService, NavService) {
+      EditSingleEventController.$inject = ['$state', '$stateParams', 'EventsService', 'NavService'];
+      function EditSingleEventController($state, $stateParams, EventsService, NavService) {
 
         var that = this;
         this.event = null;
         this.gameList = NavService.navArray;
         this.errorMessage = '';
-
-        $( '#edit-datepicker' ).datepicker();
 
         EventsService.getEventObject($stateParams.id)
           .then(function(eventObj) {
@@ -30,6 +28,7 @@
           EventsService.editEventObject($stateParams.id, that.event)
             .then(function(ref) {
               console.log('in editEvent promise', ref);
+              $state.go('editAllEvents');
             })
             .catch(function(err) {
               console.log('catch error', err);
