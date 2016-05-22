@@ -68,6 +68,7 @@
           {
             date: editedEvent.date,
             game: editedEvent.game,
+            iconSrc: editedEvent.iconSrc,
             location: editedEvent.location,
             name: editedEvent.name,
             stream: editedEvent.stream,
