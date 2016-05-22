@@ -5,8 +5,8 @@
       .module('app')
       .controller('StreamsController', StreamsController);
 
-      StreamsController.$inject = ['$stateParams', 'TwitchService'];
-      function StreamsController($stateParams, TwitchService) {
+      StreamsController.$inject = ['$state', '$stateParams', 'TwitchService'];
+      function StreamsController($state, $stateParams, TwitchService) {
         console.log('$stateParams', $stateParams);
         var that = this;
         this.singleGameStreamsArray = null;
@@ -15,7 +15,12 @@
 
         TwitchService.getSingleGameStreams($stateParams.id, 10)
           .then(function(streams) {
-            that.singleGameStreamsArray = streams;
+            console.log(streams);
+            if (streams.length === 0) {
+              $state.go('home');
+            } else {
+              that.singleGameStreamsArray = streams;
+            }
           })
           .catch(function(err) {
             console.log('catch error', err);
