@@ -5,13 +5,19 @@
       .module('app')
       .controller('EditSingleEventController', EditSingleEventController);
 
-      EditSingleEventController.$inject = ['$state', '$stateParams', 'EventsService', 'NavService'];
-      function EditSingleEventController($state, $stateParams, EventsService, NavService) {
+      EditSingleEventController.$inject = ['$scope', '$state', '$stateParams', 'EventsService', 'NavService'];
+      function EditSingleEventController($scope, $state, $stateParams, EventsService, NavService) {
 
         var that = this;
         this.event = null;
-        this.gameList = NavService.navArray;
+        this.gameList = NavService.allGamesArray;
         this.errorMessage = '';
+
+        $scope.$watch('es.event.game', function(v){
+          v = v.replace(/[^\w]+/g, '');
+          that.event.iconSrc = v;
+          console.log('$watch', that.event.iconSrc);
+        });
 
         EventsService.getEventObject($stateParams.id)
           .then(function(eventObj) {
@@ -45,6 +51,10 @@
               console.log('catch error', err);
               that.errorMessage = 'The server is not responding. Please try again shortly.';
             });
+        };
+
+        this.cancelEdit = function cancelEdit() {
+          $state.go('editAllEvents');
         };
 
       }
