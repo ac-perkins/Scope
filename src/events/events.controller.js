@@ -10,6 +10,7 @@
 
         var that = this;
         this.singleGameEventsArray = null;
+        this.eventGame = $stateParams.id;
         this.errorMessage = "";
 
         EventsService.getSingleGameEvents($stateParams.id)
