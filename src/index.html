@@ -22,6 +22,51 @@
 
         <nav class="navbar navbar-default navbar-static-top" ng-controller='NavController as nc'>
           <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class='dropdown-toggle' data-toggle="dropdown">MOBA</a>
+              <ul class='dropdown-menu'>
+                  <li ng-repeat='game in nc.mobaArray'>
+                    <a ui-sref='streams({ id: game.id })'>{{game.name}}</a>
+                  </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class='dropdown-toggle' data-toggle="dropdown">Fighting</a>
+              <ul class='dropdown-menu'>
+                  <li ng-repeat='game in nc.fightingArray'>
+                    <a ui-sref='streams({ id: game.id })'>{{game.name}}</a>
+                  </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class='dropdown-toggle' data-toggle="dropdown">FPS</a>
+              <ul class='dropdown-menu'>
+                  <li ng-repeat='game in nc.fpsArray'>
+                    <a ui-sref='streams({ id: game.id })'>{{game.name}}</a>
+                  </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class='dropdown-toggle' data-toggle="dropdown">RTS</a>
+              <ul class='dropdown-menu'>
+                  <li ng-repeat='game in nc.rtsArray'>
+                    <a ui-sref='streams({ id: game.id })'>{{game.name}}</a>
+                  </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class='dropdown-toggle' data-toggle="dropdown">CCG</a>
+              <ul class='dropdown-menu'>
+                  <li ng-repeat='game in nc.ccgArray'>
+                    <a ui-sref='streams({ id: game.id })'>{{game.name}}</a>
+                  </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- <nav class="navbar navbar-default navbar-static-top" ng-controller='NavController as nc'>
+          <ul class="nav navbar-nav">
             <li class="dropdown" ng-repeat='item in nc.navArray'>
               <a class='dropdown-toggle' data-toggle="dropdown">{{item.name}}</a>
               <ul class='dropdown-menu'>
@@ -30,7 +75,7 @@
               </ul>
             </li>
           </ul>
-        </nav>
+        </nav> -->
 
         <div id='stream' ng-class='"large-stream": ac.largeStream'>
           <iframe
