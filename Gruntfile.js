@@ -63,38 +63,38 @@ module.exports = function(grunt) {
 
 
         karma: {
-      app: {
-        options: {
-          frameworks: ['mocha', 'chai'],
-          client: {
-            mocha: {
-              ui: 'tdd'
-            }
-          },
-          browsers: ['PhantomJS'],
-          singleRun: true,
+            app: {
+                options: {
+                    frameworks: ['mocha', 'chai'],
+                    client: {
+                      mocha: {
+                        ui: 'tdd'
+                      }
+                    },
+                    browsers: ['PhantomJS'],
+                    singleRun: true,
 
-          files: [
-            'node_modules/angular/angular.js',
-            'node_modules/angular-ui-router/release/angular-ui-router.js',
-            'node_modules/angular-mocks/angular-mocks.js',
-            'node_modules/angularfire/dist/angularfire.js',
-            'node_modules/firebase/lib/firebase-web.js',
-            'src/app/app.module.js',
-            'src/events/events.service.js',   // might have to go to individual files
-            'test/specs/**/*.js'
-          ],
+                    files: [
+                      'node_modules/angular/angular.js',
+                      'node_modules/angular-ui-router/release/angular-ui-router.js',
+                      'node_modules/angular-mocks/angular-mocks.js',
+                      'node_modules/angularfire/dist/angularfire.js',
+                      'node_modules/firebase/lib/firebase-web.js',
+                      'src/app/app.module.js',
+                      'src/events/events.service.js',   // might have to go to individual files
+                      'test/specs/**/*.js'
+                    ],
 
-          preprocessors: {
-            'src/**/*.js': ['coverage']
-          },
-          reporters: ['progress', 'coverage'],
-          coverageReporter: {
-            type: 'text-summary'
-          }
+                    preprocessors: {
+                      'src/**/*.js': ['coverage']
+                    },
+                    reporters: ['progress', 'coverage'],
+                    coverageReporter: {
+                      type: 'text-summary'
+                    }
+                  }
+                }
         }
-      }
-    }
 
 
     });
