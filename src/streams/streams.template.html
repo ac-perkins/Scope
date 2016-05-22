@@ -2,6 +2,8 @@
 <p ng-hide='streams.singleGameStreamsArray || streams.errorMessage'>Loading...</p>
 <p class='error-msg' ng-show='streams.errorMessage'>{{streams.errorMessage}}</p>
 <ul>
+  {{streams.singleGameStreamsArray[0].game}}
+  <a ui-sref='events({ id: streams.singleGameStreamsArray[0].game })'>Event Calendar</a>
   <li class='streamer-li' ng-repeat='stream in streams.singleGameStreamsArray'>
     <img class='stream-logo' ng-hide='stream.channel.logo' ng-src='{{streams.noUserIcon.img}}'>
     <img class='stream-logo' ng-src='{{stream.channel.logo}}'>
