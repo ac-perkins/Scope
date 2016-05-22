@@ -9,7 +9,7 @@
     function CreateEventController($scope, $state, EventsService, NavService) {
 
       this.singleGameEvents = EventsService.singleGameEvents;
-      this.gameList = NavService.navArray;
+      this.gameList = NavService.allGamesArray;
       var that = this;
       this.newEvent = null;
       this.errorMessage = '';
