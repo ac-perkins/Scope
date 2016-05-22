@@ -8,10 +8,10 @@
         <meta name='author' content='Alex Perkins'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'>
 
-        <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald:400,700' type='text/css'>
+        <link rel='stylesheet' href='https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css'>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7' crossorigin='anonymous'>
+        <link rel='stylesheet' href='css/main.css'>
     </head>
     <body ng-controller='AppController as ac'>
 
@@ -32,8 +32,10 @@
           </ul>
         </nav>
 
-        <div id='stream' ng-class='"large-stream": ac.largeStream'>
+        <div class='stream'>
           <iframe
+
+            ng-class='{"large-stream": ac.largeStream}'
             ng-src="{{ac.embeddedStream}}"
             height="{{ac.streamHeight}}"
             width="{{ac.streamWidth}}"
@@ -41,8 +43,9 @@
             scrolling="no"
             allowfullscreen="true">
           </iframe>
-
-          <button ng-click='ac.theaterMode()'>Theater Mode</button>
+            <div class='clearfix'></div>
+          <button ng-show='!ac.largeStream' ng-click='ac.theaterMode()'>Theater Mode</button>
+          <button ng-show='ac.largeStream' ng-click='ac.defaultMode()'>Default Mode</button>
         </div>
 
 
