@@ -8,7 +8,11 @@
       NavController.$inject = ['NavService'];
       function NavController(NavService) {
 
-        this.navArray = NavService.navArray;
+        this.mobaArray = NavService.mobaArray;
+        this.fightingArray = NavService.fightingArray;
+        this.fpsArray = NavService.fpsArray;
+        this.rtsArray = NavService.rtsArray;
+        this.ccgArray = NavService.ccgArray;
 
       }
 
