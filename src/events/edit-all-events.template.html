@@ -3,7 +3,7 @@
 <p class='error-msg' ng-show='edit.errorMessage'>{{edit.errorMessage}}</p>
 
 <ul>
-  <li ng-repeat='event in edit.allEvents'>
-    <p><a ui-sref='editEvent({ id: event.$id })'>{{event.name}}</a></p>
+  <li class='edit-event-li' ng-repeat='event in edit.allEvents | orderBy: "date"'>
+    <p><a ui-sref='editEvent({ id: event.$id })'>{{event.name}}</a>({{event.date}})</p>
   </li>
 </ul>
