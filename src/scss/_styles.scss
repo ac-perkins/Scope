@@ -7,6 +7,10 @@ html, body {
 height: 100%;
 }
 
+body {
+  background-color: #EFEEF7;
+}
+
 main {
   width: 90%;
   margin: 0 auto -40px;
@@ -18,7 +22,7 @@ main {
 .navbar {
     text-align: center;
     background-color: black;
-    border-bottom: 2px solid #4DCFFF;
+    border-bottom: 3px solid $primaryAccent;
     // box-sizing: border-box;
     height: 50px;
     margin-bottom: 30px;
@@ -34,7 +38,7 @@ main {
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-  color: #4DCFFF;
+  color: $primaryAccent;
 }
 
 a.dropdown-toggle {
@@ -45,7 +49,7 @@ a.dropdown-toggle {
 footer {
   width: 90%;
   background-color: black;
-  border-top: 2px solid #4DCFFF;
+  border-top: 3px solid $primaryAccent;
   margin: 0 auto;
   vertical-align: middle;
   line-height: 50px;
@@ -67,10 +71,12 @@ footer, .push {
 height: 50px;
 }
 
-#stream {
-  width: 720px;
+div.stream {
+  // width: 720px;
+  // margin-top: 5%;
   margin-right: 1%;
   float: right;
+  display: block;
 }
 
 // .dropdown-toggle:hover {
@@ -84,14 +90,25 @@ height: 50px;
 .dropdown-menu {
   // min-width: 300px;
   background-color: #000;
-  margin-top: 10px;
+  margin-top: -3px !important;   // TODO: don't use important
   font-family: 'Oswald', sans-serif;
   text-align: center;
-  // border-top: 2px solid #4DCFFF;
+  border: 3px solid $primaryAccent;
+  border-top: none;
 }
 
 .dropdown-menu>li>a:hover {
-  background-color: #4DCFFF;
+  background-color: $primaryAccent;
+}
+
+.navbar-default .navbar-nav>.open>a {
+  color: #4DCFFF;
+  background-color: #000;
+}
+
+.navbar-default .navbar-nav>.open>a:hover {
+  color: #4DCFFF;
+  background-color: #000;
 }
 
 .dropdown-menu>li>a {
@@ -107,12 +124,12 @@ height: 50px;
   border-radius: 2px;
   height: 50px;
   margin-bottom: 2%;
-  // background-color: #000;
+  background-color: #fff;
   // color: #fff;
   font-family: 'Oswald', sans-serif;
   font-size: 0.95em;
   line-height: 48px;
-  box-shadow: 1px 0px 1px;
+  // box-shadow: 1px 0px 1px;
 }
 
 .watch-stream-btn {
@@ -135,24 +152,59 @@ height: 50px;
   outline: none;
 }
 
+.theater-btn {
+  margin-top: 1%;
+  float: right;
+  border-radius: 5px;
+  background-color: #133440;
+  outline: none;
+  border: none;
+  font-size: .8em;
+  font-family: 'Oswald', sans-serif;
+}
+
 .event-li {
   border: 1px solid #000;
   border-radius: 2px;
   height: 50px;
-  margin: 1% 0;
+  margin-bottom: 2%;
   // background-color: #000;
   // color: #fff;
   font-family: 'Oswald', sans-serif;
   font-size: 0.95em;
   line-height: 48px;
   box-shadow: 1px 0px 1px;
+  background-color: #fff;
+}
+
+.event-website {
+  float: right;
+  margin-right: 4%;
+}
+
+.edit-event-li{
+  border-bottom: 1px solid black;
+  margin-bottom: 4%;
 }
 
 // .create-event input{
 //   float: right;
 // }
 
+.game-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+}
+
 .stream-logo {
+  width: 48px;
+  float: left;
+  margin-right: 2%;
+  border-right: 1px solid black;
+  box-sizing: content-box;
+}
+
+.game-logo {
   width: 48px;
   float: left;
   margin-right: 2%;
@@ -178,6 +230,23 @@ height: 50px;
   margin: 2%;
 }
 
+.login-error {
+  margin-right: 0;
+}
+
+.large-stream {
+  float: none;
+  margin: 0 auto;
+  display: block;
+}
+
 .clearfix {
   clear: both;
+}
+
+@media screen and (min-width: 668px) and (max-width: 1200px) {
+  .main-section {
+    width: 40%;
+  }
+
 }
