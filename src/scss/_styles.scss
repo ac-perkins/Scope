@@ -19,6 +19,25 @@ main {
   height: 100%;
 }
 
+label {
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+}
+
+form {
+  background-color: #248CB2;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+select {
+  margin-bottom: 10px;
+}
+
 .navbar {
     text-align: center;
     background-color: black;
@@ -37,9 +56,6 @@ main {
   color: #fff;
 }
 
-.navbar-default .navbar-nav>li>a:hover {
-  color: $primaryAccent;
-}
 
 a.dropdown-toggle {
   color: white;
@@ -83,22 +99,14 @@ div.stream {
 //   color: #4DCFFF;
 // }
 
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
 .dropdown-menu {
   // min-width: 300px;
   background-color: #000;
-  margin-top: -3px !important;   // TODO: don't use important
+  margin-top: -4px !important;   // TODO: don't use important
   font-family: 'Oswald', sans-serif;
   text-align: center;
   border: 3px solid $primaryAccent;
   border-top: none;
-}
-
-.dropdown-menu>li>a:hover {
-  background-color: $primaryAccent;
 }
 
 .navbar-default .navbar-nav>.open>a {
@@ -106,9 +114,9 @@ div.stream {
   background-color: #000;
 }
 
-.navbar-default .navbar-nav>.open>a:hover {
-  color: #4DCFFF;
-  background-color: #000;
+.navbar-toggle {
+  float:left;
+  margin-left: 15px;
 }
 
 .dropdown-menu>li>a {
@@ -206,9 +214,9 @@ div.stream {
 
 .game-logo {
   width: 48px;
-  float: left;
-  margin-right: 2%;
-  border-right: 1px solid black;
+  float: right;
+  // margin-right: 2%;
+  // border-right: 1px solid black;
   box-sizing: content-box;
 }
 
@@ -242,6 +250,25 @@ div.stream {
 
 .clearfix {
   clear: both;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-default .navbar-nav>li>a:hover {
+    color: $primaryAccent;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu>li>a:hover {
+    background-color: $primaryAccent;
+  }
+
+  .navbar-default .navbar-nav>.open>a:hover {
+    color: #4DCFFF;
+    background-color: #000;
+  }
 }
 
 @media screen and (min-width: 668px) and (max-width: 1200px) {
