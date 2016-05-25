@@ -4,8 +4,8 @@
 <p class='error-msg' ng-show='home.errorMessage'>{{home.errorMessage}}</p>
 <ul>
   <li class='event-li' ng-repeat='event in home.upcomingEvents | orderBy: "date" | limitTo: 10'>
-    <img class='stream-logo' ng-src='/images/{{event.iconSrc}}.png'>
-    {{event.name}} {{event.location}}
+    <img class='game-logo' ng-src='/images/{{event.iconSrc}}.png'>
+    {{event.name}} {{event.date}}
     <a class='event-website' href='{{event.website}}' target="_blank">Website</a>
   </li>
 </ul>
