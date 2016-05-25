@@ -82,6 +82,11 @@ module.exports = function(grunt) {
                       'node_modules/firebase/lib/firebase-web.js',
                       'src/app/app.module.js',
                       'src/events/events.service.js',   // might have to go to individual files
+                      'src/nav/nav.service.js',
+                      'src/events/create-event.controller.js',
+                      'src/events/edit-single-event.controller.js',
+                      'src/home/home.controller.js',
+                      'src/events/edit-event.controller.js',
                       'test/specs/**/*.js'
                     ],
 

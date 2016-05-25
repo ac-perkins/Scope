@@ -1,0 +1,17 @@
+<form class='create-event' ng-submit='create.addEvent()'>
+  <label>Event name:</label><input type='text' class='form-control' ng-model='create.newEvent.name' required placeholder='Name'>
+  <label>Location:</label><input type='text' class='form-control' ng-model='create.newEvent.location' required placeholder='Location'>
+  <label>Date:</label><input type="text" class='form-control' ng-model='create.newEvent.date' required placeholder="mm/dd/yyyy">
+  <label>Stream Url:</label><input type='text' class='form-control' ng-model='create.newEvent.stream' placeholder='Event stream'>
+  <label>Website:</label><input type='text' class='form-control' ng-model='create.newEvent.website' placeholder='Event website'>
+  <label>Twitter:</label><input type='text' class='form-control' ng-model='create.newEvent.twitter' placeholder='Event twitter'>
+  <label>Game:</label>
+    <select name='select-game' class='form-control' ng-model='create.newEvent.game' required>
+      <option value='' selected>Select a game...</option>
+      <option ng-repeat='game in create.gameList | orderBy: "name"' value='{{game.name}}'>{{game.name}}</option>
+    </select>
+  <button>Create new Event</button>
+</form>
+
+
+<p class='error-msg' ng-show='create.errorMessage'>{{create.errorMessage}}</p>

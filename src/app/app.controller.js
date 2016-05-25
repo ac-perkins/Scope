@@ -9,7 +9,7 @@
       function AppController($state, $stateParams, $sce, $window, LoginService) {
         var that = this;
         this.authData = null;
-        this.embeddedStream = $sce.trustAsResourceUrl("http://player.twitch.tv/?channel=");
+        this.embeddedStream = $sce.trustAsResourceUrl("/images/default-iframe.png");
         this.errorMessage = '';
         this.streamHeight = 405;
         this.streamWidth = 720;
@@ -53,23 +53,21 @@
 
         };
 
-        // this.logout = function logout() {
-        //   var ref = new Firebase("https://incandescent-heat-8431.firebaseio.com");
-        //   var authObj = $firebaseAuth(ref);
-        //   authObj.$unauth();
-        //   this.authData = null;               // TODO: put this inside unauth promise
-        // };
-
         this.theaterMode = function theaterMode() {
           this.largeStream = true;
           this.streamWidth = window.innerWidth * 0.8;
           this.streamHeight = (this.streamWidth / 16) * 9;
+          $('body').css("background-color", "#333");
+          $('iframe').css({'display': 'block', 'margin': '0 auto'});
+          $('.stream').css({"float": "none"});
         };
 
         this.defaultMode = function defaultMode() {
           this.streamHeight = 405;
           this.streamWidth = 720;
           this.largeStream = false;
+          $('body').css("background-color", "#EFEEF7");
+          $('.stream').css({"float": "right"});
         };
 
       }

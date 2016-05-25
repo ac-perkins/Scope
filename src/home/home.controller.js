@@ -21,6 +21,17 @@
             that.errorMessage = "The server is not responding. Please try again shortly.";
           });
 
+        // this.clicked = function clicked($event) {
+        //   var a = $($event.target);
+        //   var p = $(this).closest( ".slide").find("li:last-child");
+        //   console.log(a.next());
+        //   p.slideToggle();
+        // };
+
+        $('ul').on('click', '.slide', function() {
+          $(this).find('.slide-toggle').slideToggle();
+
+        });
 
       }
 
