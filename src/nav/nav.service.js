@@ -12,6 +12,7 @@
           {name: 'League of Legends'},
           {name: 'Heroes of the Storm'},
           {name: 'Street Fighter V'},
+          {name: 'Killer Instinct'},
           {name: 'Super Smash Bros. for Wii U'},
           {name: 'Counter-Strike: Global Offensive'},
           {name: 'Overwatch'},
