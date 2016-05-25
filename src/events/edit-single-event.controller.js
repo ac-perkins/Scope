@@ -13,7 +13,7 @@
         this.gameList = NavService.allGamesArray;
         this.errorMessage = '';
 
-        $scope.$watch('es.event.game', function(v){
+        $scope.$watch('es.event.game', function editIconSrc(v){
           v = v.replace(/[^\w]+/g, '');
           that.event.iconSrc = v;
           console.log('$watch', that.event.iconSrc);
@@ -31,7 +31,7 @@
 
         this.editEvent = function editEvent() {
           console.log('that.event', this.event);
-          EventsService.editEventObject($stateParams.id, that.event)
+          return EventsService.editEventObject($stateParams.id, that.event)
             .then(function(ref) {
               console.log('in editEvent promise', ref);
               $state.go('editAllEvents');
@@ -43,7 +43,7 @@
         };
 
         this.deleteEvent = function deleteEvent() {
-          EventsService.deleteEventObject($stateParams.id)
+          return EventsService.deleteEventObject($stateParams.id)
             .then(function(ref) {
               console.log('in deleteEvent promise', ref);
             })
