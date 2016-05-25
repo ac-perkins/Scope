@@ -24,28 +24,12 @@
               userData = authData;
               return userData;
             });
-          // , function(error, authData) {
-          //   if (error) {
-          //     console.log("Login Failed!", error);
-          //   } else {
-          //     console.log("Authenticated successfully with payload:", authData);
-          //     that.authData = authData;
-          //     $state.transitionTo($state.current, $stateParams, {
-          //       reload: true,
-          //       inherit: false,
-          //       notify: true
-          //     });
-          //   }
-          // });
         }
 
         function logout() {
           var authObj = $firebaseAuth(ref);
-          authObj.$unauth()
-            .then(function removeAuth(data) {
-              console.log('in service logout',data);
-            });
-          userData = null;               // TODO: put this inside unauth promise
+          authObj.$unauth();
+          userData = null;             
         }
 
       }
