@@ -5,9 +5,20 @@
   <span class='game-title'>{{events.eventGame}}</span>
   <button class='event-stream-btn btn btn-primary' ui-sref='streams({ id: events.eventGame })'>Top Streams</button>
   <div class='clearfix'></div>
-  <li class='event-li' ng-repeat='event in events.singleGameEventsArray'>
-    <img class='game-logo' ng-src='/images/{{event.iconSrc}}.png'>
-    {{event.name}} {{event.date}}
-    <!-- <a class='event-website' href='{{event.website}}' target="_blank">Website</a> -->
-  </li>
+  <li ng-show='events.singleGameEventsArray.length === 0'>There are currently no events scheduled for this game.</li>
+  <section class='slide' ng-click='home.more[$index] = !home.more[$index]' ng-repeat='event in events.singleGameEventsArray'>
+    <li class='event-li'>
+      <img class='game-logo' ng-src='/images/{{event.iconSrc}}.png'>
+      <span ng-show='!home.more[$index]' class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+      <span ng-show='home.more[$index]' class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+      {{event.name}}
+      <span class='date'>{{event.date}}</span>
+      <!-- <a class='event-website' href='{{event.website}}' target="_blank">Website</a> -->
+    </li>
+    <li class='slide-toggle'>
+      {{event.location}}
+      <a class='event-website watch-stream-btn btn btn-primary' href='{{event.website}}' target='/_blank' role='button'>Website</a>
+      <!-- <a class='event-website' href='{{event.website}}' target="_blank">Website</a> -->
+    </li>
+  </section>
 </ul>

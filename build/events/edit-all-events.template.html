@@ -1,9 +1,15 @@
 
+<span class='game-title'>Edit Events</span>
+
 <p ng-hide='edit.allEvents || edit.errorMessage'>Loading...</p>
 <p class='error-msg' ng-show='edit.errorMessage'>{{edit.errorMessage}}</p>
 
 <ul>
-  <li class='edit-event-li' ng-repeat='event in edit.allEvents | orderBy: "date"'>
-    <p><a ui-sref='editEvent({ id: event.$id })'>{{event.name}}</a>({{event.date}})</p>
-  </li>
+  <section class='slide' ng-repeat='event in edit.allEvents | orderBy: "date"'>
+    <li class='event-li edit-event-li' ui-sref='editEvent({ id: event.$id })'>
+      <img class='game-logo' ng-src='/images/{{event.iconSrc}}.png'>
+      {{event.name}}
+      <span class='date'>{{event.date}}</span>
+    </li>
+  </section>
 </ul>
