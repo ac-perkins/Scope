@@ -42,7 +42,6 @@ select {
     text-align: center;
     background-color: black;
     border-bottom: 3px solid $primaryAccent;
-    // box-sizing: border-box;
     height: 50px;
     margin-bottom: 30px;
 }
@@ -68,14 +67,20 @@ footer {
   border-top: 3px solid $primaryAccent;
   margin: 0 auto;
   vertical-align: middle;
-  line-height: 50px;
-  // margin-top: 5%;
-  // height: 50px;
+  line-height: 45px;
 }
 
 footer li {
   color: white;
   float: right;
+}
+
+footer a {
+  color: white;
+  font-family: Tahoma;
+  font-weight: bold;
+  font-size: .8em;
+  padding-right: 16px;
 }
 
 footer nav {
@@ -88,19 +93,14 @@ height: 50px;
 }
 
 div.stream {
-  // width: 720px;
-  margin-top: 1%;
+  margin-top: 3%;
   margin-right: 1%;
   float: right;
   display: block;
 }
 
-// .dropdown-toggle:hover {
-//   color: #4DCFFF;
-// }
 
 .dropdown-menu {
-  // min-width: 300px;
   background-color: #000;
   margin-top: -4px !important;   // TODO: don't use important
   font-family: 'Oswald', sans-serif;
@@ -133,11 +133,9 @@ div.stream {
   height: 50px;
   margin-bottom: 2%;
   background-color: #fff;
-  // color: #fff;
   font-family: 'Oswald', sans-serif;
   font-size: 0.95em;
   line-height: 48px;
-  // box-shadow: 1px 0px 1px;
 }
 
 .watch-stream-btn {
@@ -187,8 +185,7 @@ div.stream {
   border-radius: 2px;
   height: 50px;
   margin-top: 2%;
-  // background-color: #000;
-  // color: #fff;
+  padding-left: 8px;
   font-family: 'Oswald', sans-serif;
   font-size: 0.95em;
   line-height: 48px;
@@ -197,18 +194,24 @@ div.stream {
 }
 
 .event-website {
+  line-height: 30px;
+  background-color: #3074AE;
+}
+
+.event-li:hover{
+  background-color: #E5E5E5;
+}
+
+.event-info-divider {
+  width: 96%;
+  height: 5px;
+  background-color: #000;
+}
+
+.date {
   float: right;
-  margin-right: 4%;
+  margin-right: 15px;
 }
-
-.edit-event-li{
-  border-bottom: 1px solid black;
-  margin-bottom: 4%;
-}
-
-// .create-event input{
-//   float: right;
-// }
 
 .game-title {
   font-family: 'Oswald', sans-serif;
@@ -226,10 +229,9 @@ div.stream {
 }
 
 .game-logo {
-  width: 48px;
+  width: 46px;
   float: right;
-  // margin-right: 2%;
-  // border-right: 1px solid black;
+  padding: 1px;
   box-sizing: content-box;
 }
 
@@ -272,9 +274,8 @@ div.stream {
   border-bottom-right-radius: 5px;
   height: 50px;
   margin: 0 auto;
+  padding-left: 8px;
   width: 96%;
-  // background-color: #000;
-  // color: #fff;
   font-family: 'Oswald', sans-serif;
   font-size: 0.95em;
   line-height: 48px;
@@ -293,7 +294,7 @@ div.stream {
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
 
-  border-top: 6px solid #000;
+  border-top: 6px solid #fff;
 }
 
 .dropdown-menu>li>a:hover {
@@ -314,15 +315,9 @@ div.stream {
 }
 
 @media screen and (min-width: 768px) {
-
-
   .dropdown:hover .dropdown-menu {
     display: block;
   }
-
-
-
-
 }
 
 @media screen and (max-width: 767px) {
@@ -354,16 +349,50 @@ div.stream {
 @media screen and (min-width: 668px) and (max-width: 1200px) {
   .main-section {
     width: 60%;
+    float: none;
+    margin: 0 auto;
+    margin-top: 2%;
   }
 
-  // iframe {
-  //   width: 640px;
-  //   height: 360px;
-  // }
+  iframe {
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+
+  div.stream {
+    float: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  iframe {
+    width: 640px;
+    height: 360px;
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
 }
 
 @media screen and (max-width: 667px) {
   .main-section {
     width: 90%;
+  }
+
+  iframe {
+    width: 560px;
+    height: 315px;
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+
+  div.stream {
+    float: none;
+  }
+
+  .theater-btn {
+    margin-bottom: 1%;
   }
 }
