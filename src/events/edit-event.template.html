@@ -1,6 +1,6 @@
 
 <p ng-hide='es.event || es.errorMessage'>Loading...</p>
-<p>{{es.event.name}}</p>
+<p><span class='game-title'>{{es.event.name}}</span></p>
 
 <form class='create-event' ng-submit='es.editEvent()'>
   <label>Event name:</label><input type='text' class='form-control' ng-model='es.event.name' ng-model-options="{updateOn: 'submit'}" required placeholder='Name'>
