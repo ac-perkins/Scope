@@ -5,16 +5,16 @@
 <p class='error-msg' ng-show='home.errorMessage'>{{home.errorMessage}}</p>
 <ul>
   <section class='slide' ng-repeat='event in home.upcomingEvents | orderBy: "date" | limitTo: 10'>
-    <li class='event-li' ng-click='home.clicked($event)'>
-
+    <li class='event-li' ng-click='home.more[$index] = !home.more[$index]'>
       <img class='game-logo' ng-src='/images/{{event.iconSrc}}.png'>
-      {{event.name}} {{event.date}}
-      <div class="arrow-down"></div>
-      <!-- <a class='event-website' href='{{event.website}}' target="_blank">Website</a> -->
+      <span ng-show='!home.more[$index]' class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+      <span ng-show='home.more[$index]' class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+      {{event.name}}
+      <span class='date'>{{event.date}}</span>
     </li>
     <li class='slide-toggle'>
       {{event.location}}
-      <a class='event-website' href='{{event.website}}' target="_blank">Website</a>
+      <a class='event-website watch-stream-btn btn btn-primary' href='{{event.website}}' target='/_blank' role='button'>Website</a>
     </li>
   </section>
 </ul>
