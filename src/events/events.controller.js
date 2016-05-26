@@ -15,11 +15,16 @@
 
         EventsService.getSingleGameEvents($stateParams.id)
           .then(function(events) {
+            console.log('events', events);
             that.singleGameEventsArray = events;
           })
           .catch(function (err) {
             console.log('catch error', err);
             that.errorMessage = "The server is not responding. Please try again shortly.";
+          });
+
+          $('ul').on('click', '.slide', function() {
+            $(this).find('.slide-toggle').slideToggle(300);
           });
 
       }
