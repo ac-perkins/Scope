@@ -1,4 +1,4 @@
-# ![Scope](images/scope-logo04.png)
+# ![Scope](build/images/scope-logo04.png)
 
 Scope is designed to allow for users to keep informed of and watch upcoming competitive gaming events and tournaments.
 
