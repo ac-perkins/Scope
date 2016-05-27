@@ -5,4 +5,4 @@ Scope is designed to allow for users to keep informed of and watch upcoming comp
 
 ## Author
 
- Scope was created by ([Alex Perkins](https://github.com/jakerella)) for his final project at The Iron Yard's DC campus.
+ Scope was created by [Alex Perkins](https://github.com/ac-perkins) for his final project at The Iron Yard's DC campus.
