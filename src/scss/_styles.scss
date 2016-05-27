@@ -352,6 +352,7 @@ div.stream {
     float: none;
     margin: 0 auto;
     margin-top: 2%;
+    margin-bottom: 5%;
   }
 
   iframe {
@@ -377,7 +378,8 @@ div.stream {
 
 @media screen and (max-width: 667px) {
   .main-section {
-    width: 90%;
+    width: 100%;
+    margin-bottom: 5%;
   }
 
   iframe {
@@ -394,5 +396,62 @@ div.stream {
 
   .theater-btn {
     margin-bottom: 1%;
+  }
+}
+
+@media screen and (max-width: 435px) {
+  iframe {
+    width: 384px;
+    height: 216px;
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  iframe {
+    width: 352px;
+    height: 198px;
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  iframe {
+    width: 320px;
+    height: 180px;
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  iframe {
+    width: 288px;
+    height: 162px;
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+
+  .event-li {
+    font-size: 0.75em;
+  }
+
+  .main-section {
+    width: 100%;
+    margin-bottom: 8%;
+  }
+
+  .event-website {
+    font-size: 0.75em;
+  }
+
+  .streamer-li {
+    font-size: 0.75em;
   }
 }
