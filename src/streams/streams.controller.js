@@ -10,7 +10,7 @@
         console.log('$stateParams', $stateParams);
         var that = this;
         this.singleGameStreamsArray = null;
-        this.noUserIcon = {img: 'http://s.jtvnw.net/jtv_user_pictures/hosted_images/GlitchIcon_WhiteonPurple.png'};
+        this.noUserIcon = {img: 'images/GlitchIcon.png'};
         this.errorMessage = "";
 
         TwitchService.getSingleGameStreams($stateParams.id, 10)
