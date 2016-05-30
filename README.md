@@ -9,7 +9,7 @@ Scope was made using [AngularJS](https://angularjs.org/), [jQuery](https://jquer
 ## Installation
 ---
 
-   1. Install:[git](https://git-scm.com), [node](https://nodejs.org), and [grunt](https://gruntjs.com).
+   1. Install: [git](https://git-scm.com), [node](https://nodejs.org), and [grunt](https://gruntjs.com).
    2. Clone Scope.
    3. Navigate to the root of your cloned directory and run `npm install`.
    4. Start coding.
