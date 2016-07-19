@@ -95,7 +95,7 @@
             allowfullscreen="true">
           </iframe>
             <div class='clearfix'></div>
-          <button class='theater-btn btn btn-primary' ng-show='!ac.largeStream' ng-click='ac.theaterMode()'>Theater Mode</button>
+          <button class='theater-btn btn btn-primary' ng-show='!ac.largeStream' ng-hide='!ac.embeddedStream' ng-click='ac.theaterMode()'>Theater Mode</button>
           <button class='theater-btn btn btn-primary' ng-show='ac.largeStream' ng-click='ac.defaultMode()'>Default Mode</button>
         </div>
 
