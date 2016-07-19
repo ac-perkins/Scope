@@ -2,7 +2,7 @@
 <p ng-hide='streams.singleGameStreamsArray || streams.errorMessage'>Loading...</p>
 <p class='error-msg' ng-show='streams.errorMessage'>{{streams.errorMessage}}</p>
 <ul>
-  <span class='game-title'>{{streams.singleGameStreamsArray[0].game}}</span>
+  <span class='game-title'>Top {{streams.singleGameStreamsArray[0].game}} Streams</span>
   <button class='event-stream-btn btn btn-primary' ui-sref='events({ id: streams.singleGameStreamsArray[0].game })'>Event Calendar</button>
   <div class='clearfix'></div>
   <li class='streamer-li' ng-repeat='stream in streams.singleGameStreamsArray'>
