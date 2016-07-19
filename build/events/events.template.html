@@ -2,7 +2,7 @@
 <p ng-hide='events.singleGameEventsArray || events.errorMessage'>Loading...</p>
 <p class='error-msg' ng-show='events.errorMessage'>{{events.errorMessage}}</p>
 <ul>
-  <span class='game-title'>{{events.eventGame}}</span>
+  <span class='game-title'>Upcoming {{events.eventGame}} Events</span>
   <button class='event-stream-btn btn btn-primary' ui-sref='streams({ id: events.eventGame })'>Top Streams</button>
   <div class='clearfix'></div>
   <li ng-show='events.singleGameEventsArray.length === 0'>There are currently no events scheduled for this game.</li>
@@ -13,12 +13,10 @@
       <span ng-show='home.more[$index]' class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
       {{event.name}}
       <span class='date'>{{event.date}}</span>
-      <!-- <a class='event-website' href='{{event.website}}' target="_blank">Website</a> -->
     </li>
     <li class='slide-toggle'>
       {{event.location}}
       <a class='event-website watch-stream-btn btn btn-primary' href='{{event.website}}' target='/_blank' role='button'>Website</a>
-      <!-- <a class='event-website' href='{{event.website}}' target="_blank">Website</a> -->
     </li>
   </section>
 </ul>

@@ -63,7 +63,7 @@
       function AppController($state, $stateParams, $sce, $window, LoginService) {
         var that = this;
         this.authData = null;
-        this.embeddedStream = $sce.trustAsResourceUrl('/images/scope-logo04.png');
+        this.embeddedStream = '';
         this.errorMessage = '';
         this.streamHeight = 405;
         this.streamWidth = 720;
