@@ -77,6 +77,10 @@ input {
 select {
   margin-bottom: 10px; }
 
+iframe {
+  background-image: url("/images/scope-logo03.png");
+  background-size: cover; }
+
 .navbar {
   text-align: center;
   background-color: black;
@@ -222,7 +226,8 @@ div.stream {
 
 .date {
   float: right;
-  margin-right: 15px; }
+  margin-right: 8px;
+  font-size: 0.89em; }
 
 .game-title {
   font-family: 'Oswald', sans-serif;
