@@ -45,7 +45,7 @@
         ];
 
         var ccgArray = [
-          {id: 'Hearthstone: Heroes of Warcraft', name: 'Hearthstone'},
+          {id: 'Hearthstone', name: 'Hearthstone'},
           {id: 'Duelyst', name: 'Duelyst'}
         ];
 
