@@ -477,7 +477,7 @@
           {name: 'Overwatch'},
           {name: 'Call of Duty: Black Ops III'},
           {name: 'StarCraft II'},
-          {name: 'Hearthstone: Heroes of Warcraft'},
+          {name: 'Hearthstone'},
           {name: 'Duelyst'},
         ];
 
