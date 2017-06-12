@@ -471,6 +471,7 @@
           {name: 'League of Legends'},
           {name: 'Heroes of the Storm'},
           {name: 'Street Fighter V'},
+          {name: 'Tekken 7'},
           {name: 'Killer Instinct'},
           {name: 'Super Smash Bros. for Wii U'},
           {name: 'Counter-Strike: Global Offensive'},
@@ -490,6 +491,7 @@
         var fightingArray = [
           {id: 'Killer Instinct', name: 'Killer Instinct'},
           {id: 'Street Fighter V', name: 'Street Fighter V'},
+          {id: 'Tekken 7', name: 'Tekken 7'},
           {id: 'Super Smash Bros. for Wii U', name: 'Super Smash Bros.'}
         ];
 
@@ -505,6 +507,7 @@
 
         var ccgArray = [
           {id: 'Hearthstone', name: 'Hearthstone'},
+          {id: 'Gwent: The Witcher Card Game', name: 'Gwent'},
           {id: 'Duelyst', name: 'Duelyst'}
         ];
 
