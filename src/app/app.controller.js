@@ -17,7 +17,7 @@
 
 
         this.changeStream = function changeStream(streamName) {
-          console.log('in changeStream function');
+          console.log('in changeStream function test');
           console.log(streamName);
           that.embeddedStream = $sce.trustAsResourceUrl('https://player.twitch.tv/?channel=' + streamName);
         };
