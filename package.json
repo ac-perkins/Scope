@@ -31,12 +31,5 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-karma": "^1.0.0",
-    "karma": "^0.13.22",
-    "karma-chai": "^0.1.0",
-    "karma-coverage": "^1.0.0",
-    "karma-mocha": "^1.0.1",
-    "karma-phantomjs-launcher": "^1.0.0",
-    "mocha": "^2.4.5",
-    "phantomjs-prebuilt": "^2.1.7"
   }
 }
