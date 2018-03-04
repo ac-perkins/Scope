@@ -2,6 +2,9 @@
   "name": "final-project",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "6.11.0"
+  },
   "directories": {
     "test": "test"
   },
