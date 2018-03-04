@@ -8,8 +8,7 @@
   "author": "Alex Perkins",
   "license": "ISC",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "grunt"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "angular": "^1.5.5",
